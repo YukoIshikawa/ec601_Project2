@@ -6,6 +6,6 @@
 
 ## Phase 1 (b): Google NLP
 - Goal: write test programs to exercise different Google NLP APIs.  Focus on Sentiment analysis.
-- Due: 9/29/2021 [Done]()
+- Due: 9/29/2021 [Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/analyze_nlp.py)
 
 ## References
