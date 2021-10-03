@@ -1,82 +1,57 @@
-import tweepy 
+import tweepy
+import csv
 import json
+from datetime import datetime, timedelta
 
+# Twitter API tokens
 consumer_key = ""
 consumer_secret = ""
 access_key = ""
 access_secret = ""
-num_tweet = 10
 
-def get_tweets_from_user(screen_name):
-    
-    alltweets = []    
-    new_tweets = api.user_timeline(screen_name = screen_name,count=10)
-    
-    alltweets.extend(new_tweets)
-    
-    oldest = alltweets[-1].id - 1
-    
-    while len(new_tweets) > 0:
-        
-        new_tweets = api.user_timeline(screen_name = screen_name,count=10,max_id=oldest)
-        
-        alltweets.extend(new_tweets)
+# num of tweets: max 200
+num_tweets = 200 
+# num of days ago from today
+num_days = 7
 
-        oldest = alltweets[-1].id - 1
-        if(len(alltweets) > 15):
-            break
-       
-    file = open('tweets_from_user.json', 'w') 
-    for status in alltweets:
-        json.dump(status._json,file,sort_keys = True,indent = 4)
-    file.close()
-
-def get_tweets_from_hashtag(words, date_since, numtweet):
-    
-    tweets = tweepy.Cursor(api.search, q=words, lang="en", since=date_since, tweet_mode='extended').items(numtweet)
-     
-    list_tweets = [tweet for tweet in tweets]
-      
-    i = 1  
-
-    for tweet in list_tweets:
-        username = tweet.user.screen_name
-        description = tweet.user.description
-        location = tweet.user.location
-        following = tweet.user.friends_count
-        followers = tweet.user.followers_count
-        totaltweets = tweet.user.statuses_count
-        retweetcount = tweet.retweet_count
-        hashtags = tweet.entities['hashtags']
-          
-        try:
-            text = tweet.retweeted_status.full_text
-        except AttributeError:
-            text = tweet.full_text
-        hashtext = list()
-        for j in range(0, len(hashtags)):
-            hashtext.append(hashtags[j]['text'])
-          
-        ith_tweet = [username, description, location, following,
-                     followers, totaltweets, retweetcount, text, hashtext]
-          
-        file = open('tweets_from_hashtag.json', 'w') 
-        for status in ith_tweet:
-            json.dump(status._json,file,sort_keys = True,indent = 4)
-        file.close()
-
-if __name__ == '__main__':
-
+def get_tweets_from_user(userID):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
+    tweets = api.user_timeline(screen_name=userID,count=num_tweets)
+    
+    # write tweets info into csv file 
+    csvFile = open('tweets_' + userID + '.csv', 'a')
+    csvWriter = csv.writer(csvFile)
+  
+    tweets_from_user_list = [tweet for tweet in tweets] 
+    for tweet in tweets_from_user_list:
+        csvWriter.writerow([tweet.user.screen_name.encode('utf-8'), tweet.created_at, tweet.text.encode('utf-8'), tweet.user.location.encode('utf-8')])
 
-    print("Username that you want to search for: ")
-    user = input()
-    get_tweets_from_user(user)
+def get_tweets_from_hashtag(hashtag):
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_key, access_secret)
+    api = tweepy.API(auth)
+    
+    date = datetime.now() - timedelta(days=num_days)
+    date_since = date.strftime("%Y-%m-%d")
+    tweets = tweepy.Cursor(api.search, q=hashtag, since=date_since).items(num_tweets)
+　　
+    # write tweets info into csv file 
+    csvFile = open('tweets_' + hashtag  + '.csv', 'a')
+    csvWriter = csv.writer(csvFile)
 
-    print("Twitter HashTag that you want to search for: ")
-    words = input()
-    print("Date ex) yyyy-mm--dd: ")
-    date_since = input()
-    get_tweets_from_hashtag(words, date_since, num_tweet)
+    tweets_from_hashtag_list = [tweet for tweet in tweets]
+    for tweet in tweets_from_hashtag_list:
+        csvWriter.writerow([tweet.user.screen_name.encode('utf-8'), tweet.created_at, tweet.text.encode('utf-8'), tweet.user.location.encode('utf-8'), tweet.entities['hashtags']])
+
+if __name__ == '__main__':
+    print("Enter username that you want to search for: ")
+    userID = input()
+    get_tweets_from_user(userID)
+
+    # you can use this for keyword searching if you do not enter # before word
+    print("Enter keyword that you want to search for: ")
+    hashtag = input()
+    get_tweets_from_hashtag(hashtag)
+
