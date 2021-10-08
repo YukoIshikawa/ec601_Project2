@@ -15,11 +15,8 @@
 - Goal: write test programs to exercise different Google NLP APIs.  Focus on Sentiment analysis.
 - Due: 9/29/2021 [Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/analyze_nlp.py)
 
-## Phase 2: Build your own social media analyzer  
-(a) User Stories    
-Due date: 10/3/2021   
-(b) Completion    
-Due date: 10/10/2021
+## Phase 2 (a): Build your own social media analyzer - User Stories
+- Due date: 10/3/2021[Done]()   
 
-
-## References
+## Phase 2 (b): Build your own social media analyzer - Completion
+- Due date: 10/10/2021[Done]()
