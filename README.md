@@ -26,4 +26,4 @@ Output: ```"sentiment_score": 0.699999988079071, "sentiment_magnitude": 0.699999
 - Due date: 10/3/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/UserStory.md)   
 
 ## Phase 2 (b): Build your own social media analyzer - Completion
-- Due date: 10/10/2021[Done]()
+- Due date: 10/10/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/twitter_nlp_analyzer.py)
