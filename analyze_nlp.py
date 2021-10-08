@@ -1,8 +1,8 @@
-   
 from google.cloud import language_v1
 import os
 import io
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'JSON PPATH HERE'
+import json
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = ''
 
 def analyze_nlp(text_content):
 
@@ -22,7 +22,7 @@ def analyze_nlp(text_content):
         "sentiment_score": "",
         "sentiment_magnitude": "",
         "sentiment": ""
-        }
+    }
 
     nlp["sentiment_score"] = response.document_sentiment.score
     nlp["sentiment_magnitude"] = response.document_sentiment.magnitude
@@ -34,9 +34,9 @@ def analyze_nlp(text_content):
     else:
         nlp["neutral"] = "neutral"
 
-    return jsonify(nlp)
+    return json.dumps(nlp)
 
 if __name__ == "__main__":
     print("Text that you want to NLP analyze: ")
     text = input()
-    analyze_nlp(text)
+    print(analyze_nlp(text))
