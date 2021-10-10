@@ -26,4 +26,11 @@ Output: ```"sentiment_score": 0.699999988079071, "sentiment_magnitude": 0.699999
 - Due date: 10/3/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/UserStory.md)   
 
 ## Phase 2 (b): Build your own social media analyzer - Completion
-- Due date: 10/10/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/twitter_nlp_analyzer.py)
+- Due date: 10/10/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/twitter_nlp_analyzer.py)      
+Ex) Retweeted by 285 but mainly negativ responses    
+```
+User ID: @BlauerSeelowe
+Tweet ID: 1446437990243258368
+Result: positive:  0 negative:  20 neutral:  0
+```
+
