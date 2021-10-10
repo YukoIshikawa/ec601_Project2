@@ -2,13 +2,13 @@ import tweepy
 from google.cloud import language_v1
 import os
 import io
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'ec601-327921-163f4aceceb9.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'GOOGLE CLOUD JSON HRRE'
 
 # Twitter API credentials 
-consumer_key = "OWPfglqeVOT5fBAYOj0bsSOW6"
-consumer_secret = "I1HlsVm4go9gU6yr50QWdES78G6APx6CvJowASJmI5HuIMByoV"
-access_key = "1347722066-3n86zjubxeJjsrUDCtPSFlvxeBkEGcI8YeiUc3V"
-access_secret = "bvllPUsptqA7pztYstBM1VlONDAbjL8dCDdi6YPd0Qj5P"
+consumer_key = ""
+consumer_secret = ""
+access_key = ""
+access_secret = ""
 
 num_tweets = 200 # num of tweets: max 200
 NUM_RETWEETS = 200 # retweeted min number  
@@ -60,7 +60,7 @@ def print_result_sentiment_of_retweets(tweetID):
 def analyze_nlp(text_content):
     client = language_v1.LanguageServiceClient()
     type_ = language_v1.Document.Type.PLAIN_TEXT
-    language = "ja"
+    language = "en" ## change the language here 
     document = {"content": text_content, "type_": type_, "language": language}
     encoding_type = language_v1.EncodingType.UTF8
     response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
