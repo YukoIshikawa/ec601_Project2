@@ -1,18 +1,23 @@
 ## User stories 
 
-When people tweeted something and got a lot of replies, it is sometimes difficult to check every replies one by one and check if they get mainly positive responses or negative responses.   
+- Background:   
+Twitter supports a response "Quote tweets". Quote Tweets are much like Retweets except that they include a new Tweet message. They are not necessarily endorsements and contain both positive and negative responses. It is hard to know whether people Quote tweeted with positive intentions or negative intentions just by seeing the number of retweets. Therefore, sentiment analysis of Quote Tweets are required to determine how people respond and social influence. 
 
 - Mission:        
-  This application is for people who tweeted something and get a lot of replies to know how people respond to their tweets by analyzing sentiment of replies and providing output counting how many positive, negative or neutral replies.
+  This application is for twitter users, influencers and Twitter researchers to analyze sentiment of Quote Tweets and determine social influence of a specific Tweet. 
 - Target User:      
-  people who are using twitter 
+    - Twitter users 
+    - influencer 
+    - Twitter Researchers ets..
 - User stories:     
-  - I, as a twitter user, want to input my username to analyze
-  - I, as a twitter user, want to input a specific twitter ID to analyze
-  - I, as a twitter user, want to know how many positive, negative or neutral replies I got for my tweet
-  - I, as a twitter user, want to see the analysis result 
+  - I, as a twitter user, influencer or researcher, want to know what tweet Quote tweeted a lot by user ID.
+  - I, as a twitter user, influencer or researcher, want to input my user ID to see tweets that Qupte tweeted a lot 
+  - I, as a twitter user, influencer or researcher, want to input a tweet ID to analyze sentiment of the Quote tweet
+  - I, as a twitter user, influencer or researcher, want to analyze sentiment of Quote tweets 
+  - I, as a twitter user, influencer or researcher, want to see the result of sentiment analysis of Quote tweets
 - MVP: 
-  - can enter the username
-  - can enter the twitter ID
-  - can analyze the sentiment of replies 
-  - can see the analysis result 
+  - enter the username
+  - check twitter ID, the retweeted number and tweet text
+  - enter the twitter ID to analyze sentiment of its Quote tweet
+  - analyze sentiment of Quote tweets
+  - display the result of sentiment analysis
