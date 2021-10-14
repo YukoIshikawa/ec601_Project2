@@ -1,7 +1,7 @@
 ## User stories 
 
 - Background:   
-Twitter supports a response "Quote tweets". Quote Tweets are much like Retweets except that they include a new Tweet message. They are not necessarily endorsements and contain both positive and negative responses. It is hard to know whether people Quote tweeted with positive intentions or negative intentions just by seeing the number of retweets. Therefore, sentiment analysis of Quote Tweets are required to determine how people respond and social influence. 
+Twitter supports a response "Quote tweets". Quote Tweets are much like Retweets except that they include a new Tweet message. They are not necessarily endorsements and contain both positive and negative responses. It is hard to know whether people Quote tweeted with positive intentions or negative intentions just by seeing the number of retweets. Therefore, sentiment analysis of Quote Tweets are required to determine how people respond and evaluate its social influence. 
 
 - Mission:        
   This application is for twitter users, influencers and Twitter researchers to analyze sentiment of Quote Tweets and determine social influence of a specific Tweet. 
