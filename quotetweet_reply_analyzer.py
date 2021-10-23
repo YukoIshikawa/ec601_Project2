@@ -16,7 +16,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-# exclude unnecessary words such @screen_name and URL included during searching
+# exclude unnecessary words such as @screen_name and URL included during searching
 def format_text(text):
     text=re.sub(r'https?://[\w/:%#\$&\?\(\)~\.=\+\-…]+', "", text)
     text=re.sub('\n', " ", text)
@@ -56,6 +56,13 @@ def analyze_nlp(text_content):
     response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
     return response.document_sentiment.score
 
+# take denominator and numerator and return percentage in integer 
+def calc_percentage(num, total):
+    if (total != 0):
+        return int((num/total)*100)
+    else:
+        return 0
+
 # take tweetID and return the percentage of positive, negative and neutral replies and quote tweets 
 def get_sentiment_of_retweets(tweetID):
     row = get_replies_and_quotetweets(tweetID)
@@ -71,7 +78,7 @@ def get_sentiment_of_retweets(tweetID):
         else: 
             num_neutral += 1
     length = len(row)
-    return int((num_positive/length)*100), int((num_negative/length)*100), int((num_neutral/length)*100)
+    return calc_percentage(num_positive, length), calc_percentage(num_negative, length), calc_percentage(num_neutral, length)
 
 # take text and return sentiment score 
 def analyze_nlp(text_content):
