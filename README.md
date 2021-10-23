@@ -28,16 +28,17 @@ Output: ```"sentiment_score": 0.699999988079071, "sentiment_magnitude": 0.699999
 
 ## Phase 2 (b): Build your own social media analyzer - Completion
 - Due date: 10/10/2021
-- You can see it from here: [quotetweet_reply_analyzer](https://github.com/YukoIshikawa/ec601_Project2/blob/main/twitter_nlp_analyzer.py)     
+- You can see it from here: [quotetweet_reply_analyzer](https://github.com/YukoIshikawa/ec601_Project2/blob/main/quotetweet_reply_analyzer.py)     
 - How to run the code 
   -  ``` git clone  https://github.com/YukoIshikawa/ec601_Project2.git```
   - Enter your Twitter API and Google Cloud API credentials on retweets_analyzer.py file
-  - ``` python retweets_analyzer.py```     
+  - ``` python quotetweet_reply_analyzer.py```     
 - Example input and output     
-Retweeted by 285 users but mainly negative responses    
+TweetID: 1451354572933550081   
 ```
-User ID: @BlauerSeelowe
-Tweet ID: 1446437990243258368
-Result: positive:  0 negative:  20 neutral:  0
+The result of sentiment analysis of replies and quote tweets for the tweet
+positive🙂:  28 %
+negative🙁:  0 %
+neutral😐:  71 %
 ```
 
