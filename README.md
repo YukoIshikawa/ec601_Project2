@@ -23,10 +23,12 @@ Input: ```The most interesting course at BU is EC601.```
 Output: ```"sentiment_score": 0.699999988079071, "sentiment_magnitude": 0.699999988079071, "sentiment": "positive"}```
 
 ## Phase 2 (a): Build your own social media analyzer - User Stories
-- Due date: 10/3/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/UserStory.md)   
+- Due date: 10/3/2021
+- You can see it from here: [User Story](https://github.com/YukoIshikawa/ec601_Project2/blob/main/UserStory.md)   
 
 ## Phase 2 (b): Build your own social media analyzer - Completion
-- Due date: 10/10/2021[Done](https://github.com/YukoIshikawa/ec601_Project2/blob/main/twitter_nlp_analyzer.py)     
+- Due date: 10/10/2021
+- You can see it from here: [quotetweet_reply_analyzer](https://github.com/YukoIshikawa/ec601_Project2/blob/main/twitter_nlp_analyzer.py)     
 - How to run the code 
   -  ``` git clone  https://github.com/YukoIshikawa/ec601_Project2.git```
   - Enter your Twitter API and Google Cloud API credentials on retweets_analyzer.py file
