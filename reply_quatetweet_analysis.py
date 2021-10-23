@@ -30,7 +30,7 @@ def get_replies_and_quotetweets(tweetID):
     # query for reply
     query_reply = '@' + status._json['user']['screen_name'] + ' exclude:retweets'
     # extract replies 
-    for status_reply in api.search(q=query_reply, lang='ja', count=100):
+    for status_reply in api.search(q=query_reply, lang='en', count=100):
         if status_reply._json['in_reply_to_status_id'] == status._json['id']:
             row.append(format_text(status_reply._json['text']))
         else:
@@ -38,7 +38,7 @@ def get_replies_and_quotetweets(tweetID):
     # query for quote tweets 
     query_quote = status._json['id_str'] + ' exclude:retweets'
     # extract quote tweets 
-    for status_quote in api.search(q=query_quote, lang='ja', count=100):
+    for status_quote in api.search(q=query_quote, lang='en', count=100):
         if status_quote._json['id_str'] == status._json['id_str']:
             continue
         else:
@@ -50,7 +50,7 @@ def get_replies_and_quotetweets(tweetID):
 def analyze_nlp(text_content):
     client = language_v1.LanguageServiceClient()
     type_ = language_v1.Document.Type.PLAIN_TEXT
-    language = "ja"
+    language = "en"
     document = {"content": text_content, "type_": type_, "language": language}
     encoding_type = language_v1.EncodingType.UTF8
     response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
@@ -77,7 +77,7 @@ def get_sentiment_of_retweets(tweetID):
 def analyze_nlp(text_content):
     client = language_v1.LanguageServiceClient()
     type_ = language_v1.Document.Type.PLAIN_TEXT
-    language = "ja"
+    language = "en"
     document = {"content": text_content, "type_": type_, "language": language}
     encoding_type = language_v1.EncodingType.UTF8
     response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
