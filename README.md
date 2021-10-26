@@ -33,7 +33,7 @@ neutral😐:  71 %
 ```
 ## Phase 3 (a): Write Unit tests for Projectt 2
 - Due date: 10/29/2021
-- You can see it here: [quotetweet_reply_analyzer_test.py]()
+- You can see it here: [quotetweet_reply_analyzer_test.py](https://github.com/YukoIshikawa/ec601_Project2/blob/main/quotetweet_reply_analyzer_test.py)
 
 ## Phase 3 (b): Code Review
 - Due Date: 11/1/2021
