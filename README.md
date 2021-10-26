@@ -18,7 +18,7 @@ Output: ```"sentiment_score": 0.699999988079071, "sentiment_magnitude": 0.699999
 
 ## Phase 2 (b): Build your own social media analyzer - Completion
 - Due date: 10/10/2021
-- You can see it from here: [quotetweet_reply_analyzer](https://github.com/YukoIshikawa/ec601_Project2/blob/main/quotetweet_reply_analyzer.py)     
+- You can see it from here: [quotetweet_reply_analyzer.py](https://github.com/YukoIshikawa/ec601_Project2/blob/main/quotetweet_reply_analyzer.py)     
 - How to run the code 
   -  ``` git clone  https://github.com/YukoIshikawa/ec601_Project2.git```
   - Enter your Twitter API and Google Cloud API credentials on quotetweet_reply_analyzer.py file
@@ -31,4 +31,11 @@ positive🙂:  28 %
 negative🙁:  0 %
 neutral😐:  71 %
 ```
+## Phase 3 (a): Write Unit tests for Projectt 2
+- Due date: 10/29/2021
+- You can see it here: [quotetweet_reply_analyzer_test.py]()
+
+## Phase 3 (b): Code Review
+- Due Date: 11/1/2021
+- You can see it here: [code review]()
 
