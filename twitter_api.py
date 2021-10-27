@@ -36,7 +36,7 @@ def get_tweets_from_hashtag(hashtag):
     date = datetime.now() - timedelta(days=num_days)
     date_since = date.strftime("%Y-%m-%d")
     tweets = tweepy.Cursor(api.search, q=hashtag, since=date_since).items(num_tweets)
-　　
+    
     # write tweets info into csv file 
     csvFile = open('tweets_' + hashtag  + '.csv', 'a')
     csvWriter = csv.writer(csvFile)
