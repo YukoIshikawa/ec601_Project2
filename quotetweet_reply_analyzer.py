@@ -3,13 +3,13 @@ import re
 from google.cloud import language_v1
 import os
 import io
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'ec601-327921-163f4aceceb9.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '' # google cloud credentials here
 
-# Twitter API credentials 
-consumer_key = "OWPfglqeVOT5fBAYOj0bsSOW6"
-consumer_secret = "I1HlsVm4go9gU6yr50QWdES78G6APx6CvJowASJmI5HuIMByoV"
-access_key = "1347722066-3n86zjubxeJjsrUDCtPSFlvxeBkEGcI8YeiUc3V"
-access_secret = "bvllPUsptqA7pztYstBM1VlONDAbjL8dCDdi6YPd0Qj5P"
+# Twitter API credentials here
+consumer_key = ""
+consumer_secret = ""
+access_key = ""
+access_secret = ""
 
 # Tweepy authoritation
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
