@@ -34,6 +34,7 @@ neutral😐:  71 %
 ## Phase 3 (a): Write Unit tests for Projectt 2
 - Due date: 10/29/2021
 - You can see it here: [quotetweet_reply_analyzer_test.py](https://github.com/YukoIshikawa/ec601_Project2/blob/main/quotetweet_reply_analyzer_test.py)
+- Note: my code passed the unit test with google cloud and twitter API credentials [You can see it here](https://github.com/YukoIshikawa/ec601_Project2/actions/runs/1397717822), but it has errors now since I deleted credentials 
 
 ## Phase 3 (b): Code Review
 - Due Date: 11/1/2021
