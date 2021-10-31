@@ -38,5 +38,5 @@ neutral😐:  71 %
 
 ## Phase 3 (b): Code Review
 - Due Date: 11/1/2021
-- You can see it here: [code review]()
+- You can see it here: [code review](https://github.com/hn957/EC601_project2/issues/1)
 
